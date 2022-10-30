@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/nex/prefix2"/>
+    <qresource prefix="/">
+        <file>bg1.png</file>
+        <file>ev2.png</file>
+    </qresource>
+</RCC>

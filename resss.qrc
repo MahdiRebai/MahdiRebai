@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>../../Downloads/calendar.png</file>
+        <file>../../Downloads/apps.png</file>
+        <file>../../Downloads/paper-plane.png</file>
+        <file>../../Downloads/user.png</file>
+        <file>../../Downloads/shopping-cart.png</file>
+        <file>../../Downloads/home.png</file>
+        <file>2.png</file>
+        <file>../../Downloads/login.png</file>
+        <file>0.png</file>
+        <file>../../Downloads/icons8-cancel-24.png</file>
+        <file>../../Downloads/back.png</file>
+        <file>../../Downloads/LG2.png</file>
+        <file>../../Downloads/add.png</file>
+        <file>../../Pictures/WELCOME !.png</file>
+        <file>../../Pictures/HEY.png</file>
+        <file>../../Downloads/HEY2.png</file>
+    </qresource>
+</RCC>
