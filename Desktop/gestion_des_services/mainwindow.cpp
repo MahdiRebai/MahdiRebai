@@ -1,6 +1,6 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
-
+#include <QIntValidator>
 #include "service.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->le_NUM->setValidator( new QIntValidator(100, 9999999, this));
     ui->tab_service->setModel(S.afficher());
 
 
