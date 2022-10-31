@@ -51,7 +51,7 @@ void Service::setclasse(int classe){this->classe=classe;}
  {
      QSqlQueryModel* model=new QSqlQueryModel();
 
-           model->setQuery("SELECT* FROM Service");
+           model->setQuery("SELECT * FROM Service");
            model->setHeaderData(0, Qt::Horizontal, QObject::tr("NUM"));
            model->setHeaderData(1, Qt::Horizontal, QObject::tr("Theme"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("classe"));
