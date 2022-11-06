@@ -87,6 +87,28 @@ private slots:
 
     void on_PBmodifier_clicked();
 
+    void on_ajout_clicked();
+
+    void on_affichage_clicked();
+
+    void on_supprimer_clicked();
+
+    void on_modifier_clicked();
+
+    void on_option_clicked();
+
+    void on_PBmodifierX_clicked();
+
+    void on_comboBox_ordre_currentTextChanged(const QString &arg1);
+
+    void on_comboBox_parametre_currentTextChanged(const QString &arg1);
+
+    void on_lineEdit_recherche_textChanged(const QString &arg1);
+
+    void on_tettt_clicked();
+
+    void on_comboBox_parametre_activated(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
         Evenement E;

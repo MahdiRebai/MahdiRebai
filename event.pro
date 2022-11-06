@@ -28,7 +28,6 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
-    dialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -2,21 +2,24 @@
 #include <QSqlQuery>
 #include<QtDebug>
 #include<QObject>
+
 Evenement::Evenement()
 {
-    ref=0;  cin=0;  numS=0;
+    ref="";  cin=0;  numS=0;
 }
 
 
-    Evenement::Evenement(int ref,int cin,int numS)
-{ this->ref=ref;this->cin=cin;this->numS=numS;}
+    Evenement::Evenement(QString ref,int cin,int numS)
+{ this->ref=ref;
+        this->cin=cin;
+        this->numS=numS;}
 
 
-    int Evenement::getRef(){return ref;}
+    QString Evenement::getRef(){return ref;}
     int Evenement::getCin(){return cin;}
     int Evenement::getNumS(){return numS;}
 
-    void Evenement:: setRef(int ref){this->ref=ref;}
+    void Evenement:: setRef(QString ref) {this->ref=ref;}
     void Evenement::setCin(int cin){this->cin=cin;}
     void Evenement::setNumS(int numS){this->numS=numS;}
 
@@ -25,7 +28,7 @@ Evenement::Evenement()
     {
         QSqlQuery query;
 
-    //    QString ref_string=QString::number(ref);
+     //  QString ref_string=QString::number(ref);
               query.prepare("INSERT INTO events (REFERENCE, cin, numS) VALUES (:ref, :cin, :numS)");
 
               query.bindValue(":ref", ref);
@@ -33,7 +36,7 @@ Evenement::Evenement()
               query.bindValue(":numS", numS);
               return query.exec();
     }
-    bool Evenement::supprimer(int ref)
+    bool Evenement::supprimer(QString ref)
     {
 
         QSqlQuery query;
@@ -48,26 +51,46 @@ Evenement::Evenement()
 
     }
 
-       QSqlQueryModel *Evenement::afficher()
+       QSqlQueryModel *Evenement::afficher(QString numLine,QString ordre,QString parametre)
         {
               QSqlQueryModel * model=new  QSqlQueryModel();
-              model->setQuery("SELECT * FROM events");
+              QString queryText ;
+              if (parametre == "numero de service" )
+                   parametre = "nums" ;
+
+              if (numLine == "")
+                 { if (ordre == "Croissant")
+                  queryText = "SELECT * FROM events ORDER BY "+ parametre +" ASC" ;
+                  else
+                      queryText = "SELECT * FROM events ORDER BY "+ parametre +" DESC" ;
+                      }
+              else
+                 { if (ordre == "Croissant")
+                                    queryText = "SELECT * FROM events WHERE numS = '"+numLine+"' ORDER BY "+ parametre +" ASC" ;
+                                    else
+                                       queryText = "SELECT * FROM events WHERE numS = '"+numLine+"' ORDER BY "+ parametre +" DESC" ;
+                }
+
+              qDebug()<< queryText ;
+              model->setQuery(queryText);
               model->setHeaderData(0, Qt::Horizontal, QObject::tr("REFERENCE"));
               model->setHeaderData(1, Qt::Horizontal, QObject::tr("CIN"));
               model->setHeaderData(2, Qt::Horizontal, QObject::tr("NUMS"));
    return model;
         }
-  bool Evenement::modifier(int ref,int cin, int numS)
-        {
-
+  bool Evenement::modifier(QString ref,int cin, int numS)
+        {   //    QString ref_i=QString::number(ref);
                    QSqlQuery query;
-                   query.prepare("update events set CIN=:cin,NUMS=:numS where REFerence=:ref");
+                   query.prepare("update events set  CIN=:cin,NUMS=:numS where REFERENCE=:ref");
                    query.bindValue(":ref",ref);
                    query.bindValue(":CIN",cin);
                    query.bindValue(":numS",numS);
 
            return query.exec();
         }
+
+
+
 
 
 
