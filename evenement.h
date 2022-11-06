@@ -6,19 +6,19 @@ class Evenement
 {
 public:
     Evenement();
-    Evenement(int,int,int);
-    int getRef();
+    Evenement(QString,int,int);
+    QString getRef();
     int getCin();
     int getNumS();
-    void setRef(int);
+    void setRef(QString);
     void setCin(int);
     void setNumS(int);
     bool ajouter();
-    QSqlQueryModel *afficher();
-    bool supprimer(int );
-     bool modifier(int ref,int cin, int numS);
+    QSqlQueryModel *afficher(QString numS,QString ordre,QString parametre);
+     bool supprimer(QString ref);
+     bool modifier(QString ref,int cin, int numS);
 
-private: int ref;
+private: QString ref;
          int cin;
          int numS;
 };
