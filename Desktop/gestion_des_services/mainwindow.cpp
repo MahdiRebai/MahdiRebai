@@ -86,9 +86,9 @@ void MainWindow::on_comboBox_tri_currentIndexChanged(const QString &arg1)
     {
       ui->tab_service->setModel(S.afficher_S_trie_NUM());
     }
-    else if (crit=="Theme")
+    else if (crit=="CLASSE")
     {
-      ui->tab_service->setModel(S.afficher_S_trie_theme());
+      ui->tab_service->setModel(S.afficher_S_trie_classe());
     }
 
 }

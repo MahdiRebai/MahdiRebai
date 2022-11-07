@@ -80,11 +80,11 @@ void Service::setclasse(int classe){this->classe=classe;}
 
      return model;
  }
- QSqlQueryModel* Service:: afficher_S_trie_theme()
+ QSqlQueryModel* Service:: afficher_S_trie_classe()
  {
      QSqlQueryModel * model= new QSqlQueryModel();
 
-     model->setQuery("SELECT * FROM SERVICE ORDER BY THEME ;");
+     model->setQuery("SELECT * FROM SERVICE ORDER BY CLASSE ;");
      model->setHeaderData(0,Qt::Horizontal,QObject::tr("NUM"));
      model->setHeaderData(1,Qt::Horizontal,QObject::tr("theme"));
      model->setHeaderData(2,Qt::Horizontal,QObject::tr("classe"));

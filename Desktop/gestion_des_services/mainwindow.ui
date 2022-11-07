@@ -63,7 +63,7 @@ color :#f8a299;
 backgrounf-color:#ffe4e1;}</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="Ajouter_un_service">
      <attribute name="title">
@@ -379,7 +379,7 @@ backgrounf-color:#ffe4e1;}</string>
       </item>
       <item>
        <property name="text">
-        <string>Theme</string>
+        <string>CLASSE</string>
        </property>
       </item>
      </widget>

@@ -22,7 +22,7 @@ public:
    bool supprimer(int);
    bool modifier(int NUM,QString Theme, int classe);
    QSqlQueryModel* afficher_S_trie_NUM();
-   QSqlQueryModel* afficher_S_trie_theme();
+   QSqlQueryModel* afficher_S_trie_classe();
     QSqlQueryModel *rechercher(QString );
 
 private:
