@@ -63,7 +63,7 @@ color :#f8a299;
 backgrounf-color:#ffe4e1;}</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="Ajouter_un_service">
      <attribute name="title">
@@ -347,30 +347,63 @@ backgrounf-color:#ffe4e1;}</string>
        </rect>
       </property>
       <property name="text">
-       <string>Tri et recherche</string>
+       <string>Tri selon :</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
+     <widget class="QPushButton" name="pb_pdf">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>200</y>
-        <width>113</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>240</y>
-        <width>251</width>
+        <x>460</x>
+        <y>250</y>
+        <width>171</width>
         <height>51</height>
        </rect>
       </property>
       <property name="text">
-       <string>Export fichier Excel</string>
+       <string>Export fichier PDF</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_tri">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>200</y>
+        <width>121</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>NUM</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Theme</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recherche</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_cherche_num">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>230</y>
+        <width>121</width>
+        <height>22</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -392,7 +425,7 @@ backgrounf-color:#ffe4e1;}</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>250</y>
+        <y>260</y>
         <width>211</width>
         <height>51</height>
        </rect>

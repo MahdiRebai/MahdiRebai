@@ -21,7 +21,9 @@ public:
    QSqlQueryModel * afficher();
    bool supprimer(int);
    bool modifier(int NUM,QString Theme, int classe);
-
+   QSqlQueryModel* afficher_S_trie_NUM();
+   QSqlQueryModel* afficher_S_trie_theme();
+    QSqlQueryModel *rechercher(QString );
 
 private:
     int NUM, classe;

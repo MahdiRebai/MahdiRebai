@@ -23,6 +23,9 @@ private slots:
     void on_pb_supprimer_clicked();
 
     void on_pushButton_2_clicked();
+    void on_comboBox_tri_currentIndexChanged(const QString &arg1);
+    void on_lineEdit_cherche_num_textChanged(const QString &arg1);
+    void on_pb_pdf_clicked();
 
 private:
     Ui::MainWindow *ui;

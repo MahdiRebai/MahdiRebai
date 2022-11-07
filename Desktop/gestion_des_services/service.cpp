@@ -69,3 +69,37 @@ void Service::setclasse(int classe){this->classe=classe;}
 
     return query.exec();
  }
+ QSqlQueryModel * Service::afficher_S_trie_NUM()
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+
+     model->setQuery("SELECT * FROM SERVICE ORDER BY NUM ;");
+     model->setHeaderData(0,Qt::Horizontal,QObject::tr("NUM"));
+     model->setHeaderData(1,Qt::Horizontal,QObject::tr("theme"));
+     model->setHeaderData(2,Qt::Horizontal,QObject::tr("classe"));
+
+     return model;
+ }
+ QSqlQueryModel* Service:: afficher_S_trie_theme()
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+
+     model->setQuery("SELECT * FROM SERVICE ORDER BY THEME ;");
+     model->setHeaderData(0,Qt::Horizontal,QObject::tr("NUM"));
+     model->setHeaderData(1,Qt::Horizontal,QObject::tr("theme"));
+     model->setHeaderData(2,Qt::Horizontal,QObject::tr("classe"));
+
+     return model;
+ }
+ QSqlQueryModel * Service::rechercher(QString NUM)
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+
+     model->setQuery("SELECT * FROM SERVICE WHERE NUM LIKE '%"+NUM+"%' ");
+
+     model->setHeaderData(0,Qt::Horizontal,QObject::tr("NUM"));
+     model->setHeaderData(1,Qt::Horizontal,QObject::tr("Theme"));
+     model->setHeaderData(2,Qt::Horizontal,QObject::tr("classe"));
+
+     return model;
+ }
