@@ -27,6 +27,10 @@ private slots:
     void on_lineEdit_cherche_num_textChanged(const QString &arg1);
     void on_pb_pdf_clicked();
 
+
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     Service S;

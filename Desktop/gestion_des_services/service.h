@@ -24,6 +24,7 @@ public:
    QSqlQueryModel* afficher_S_trie_NUM();
    QSqlQueryModel* afficher_S_trie_classe();
     QSqlQueryModel *rechercher(QString );
+     QSqlQueryModel * classification();
 
 private:
     int NUM, classe;

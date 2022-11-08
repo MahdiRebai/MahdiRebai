@@ -159,3 +159,10 @@ void MainWindow::on_pb_pdf_clicked()
         painter.end();
     }
 }
+
+
+
+void MainWindow::on_pushButton_clicked()
+{
+     ui->tableView->setModel(S.classification());
+}

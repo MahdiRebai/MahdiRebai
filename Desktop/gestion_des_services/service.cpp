@@ -103,3 +103,13 @@ void Service::setclasse(int classe){this->classe=classe;}
 
      return model;
  }
+
+ QSqlQueryModel * Service::classification()
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+     model->setQuery("SELECT EVENEMENT.NUM, AVG(AVIS.NOTE), CASE WHEN AVG(AVIS.NOTE)>0 and AVG(AVIS.NOTE)<=2 then '3' WHEN AVG(AVIS.NOTE)>2 and AVG(AVIS.NOTE)<5 then '2' else '1' end as classe FROM AVIS INNER JOIN EVENEMENT ON EVENEMENT.REFERENCE=AVIS.REFERENCE GROUP BY EVENEMENT.NUM ORDER BY EVENEMENT.NUM");
+     model->setHeaderData(0,Qt::Horizontal,QObject::tr("EVENEMENT.NUM"));
+     model->setHeaderData(1,Qt::Horizontal,QObject::tr("AVIS.NOTE"));
+     // model->setQuery("SELECT NUM  FROM EVENEMENT");
+     return model;
+ }
