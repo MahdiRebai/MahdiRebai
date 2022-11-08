@@ -27,9 +27,11 @@ private slots:
     void on_lineEdit_cherche_num_textChanged(const QString &arg1);
     void on_pb_pdf_clicked();
 
-
+    void stats(QString table,QString critere,int valeur1,int valeur2,QString unite);
 
     void on_pushButton_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::MainWindow *ui;
