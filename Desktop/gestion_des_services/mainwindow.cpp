@@ -229,5 +229,5 @@ void MainWindow::stats(QString table,QString critere,int valeur1,int valeur2,QSt
 
 void MainWindow::on_pushButton_5_clicked()
 {
-    stats("SERVICE","CLASSE",100,200,"THEMES");
+    stats("SERVICE","CLASSE",1,5,"TYPES");
 }
