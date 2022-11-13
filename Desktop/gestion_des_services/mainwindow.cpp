@@ -231,3 +231,8 @@ void MainWindow::on_pushButton_5_clicked()
 {
     stats("SERVICE","CLASSE",1,5,"TYPES");
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    ui->tableView_3->setModel(S.Promotion());
+}

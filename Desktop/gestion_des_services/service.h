@@ -25,7 +25,7 @@ public:
    QSqlQueryModel* afficher_S_trie_classe();
     QSqlQueryModel *rechercher(QString );
      QSqlQueryModel * classification();
-
+    QSqlQueryModel * Promotion();
 private:
     int NUM, classe;
     QString Theme;

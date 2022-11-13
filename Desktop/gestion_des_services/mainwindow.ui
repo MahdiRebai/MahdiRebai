@@ -63,7 +63,7 @@ color :#f8a299;
 backgrounf-color:#ffe4e1;}</string>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="Ajouter_un_service">
      <attribute name="title">
@@ -467,6 +467,29 @@ backgrounf-color:#ffe4e1;}</string>
      <attribute name="title">
       <string>Promotions</string>
      </attribute>
+     <widget class="QTableView" name="tableView_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>30</y>
+        <width>351</width>
+        <height>191</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>250</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Promotion</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
