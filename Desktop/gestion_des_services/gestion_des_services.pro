@@ -7,6 +7,7 @@
 QT       += core gui sql
 QT += printsupport
 QT       += core gui charts
+QT       +=serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = gestion_des_services
@@ -26,12 +27,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        arduino.cpp \
         connection.cpp \
         main.cpp \
         mainwindow.cpp \
         service.cpp
 
 HEADERS += \
+        arduino.h \
         connection.h \
         mainwindow.h \
         service.h

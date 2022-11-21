@@ -3,7 +3,7 @@
 #include <QMainWindow>
 #include<QMessageBox>
 #include "service.h"
-
+#include "arduino.h"
 
 namespace Ui {
 class MainWindow;
@@ -37,6 +37,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QByteArray data; // variable contenant les données reçues
+
+    Arduino A; // objet temporaire
     Service S;
 };
 
