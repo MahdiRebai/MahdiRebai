@@ -15,11 +15,14 @@ public:
    void setNUM(int);
    void setTheme(QString);
    void setclasse(int);
+   void setstandby(int);
+   int getstandby();
 
 
    bool ajouter();
    QSqlQueryModel * afficher();
    bool supprimer(int);
+   bool modifier(int NUM,bool rain);
    bool modifier(int NUM,QString Theme, int classe);
    QSqlQueryModel* afficher_S_trie_NUM();
    QSqlQueryModel* afficher_S_trie_classe();
@@ -27,7 +30,7 @@ public:
      QSqlQueryModel * classification();
     QSqlQueryModel * Promotion();
 private:
-    int NUM, classe;
+    int NUM, classe,standby;
     QString Theme;
 
 };

@@ -23,6 +23,9 @@ void Service::setNUM(int NUM){this->NUM=NUM;}
 void Service::setTheme(QString Theme){this->Theme=Theme;}
 void Service::setclasse(int classe){this->classe=classe;}
 
+int Service:: getstandby(){return standby;}
+
+void Service::setstandby(int standby){this->standby=standby;}
  bool Service::ajouter()
  {
      QSqlQuery query;
@@ -47,6 +50,8 @@ void Service::setclasse(int classe){this->classe=classe;}
     return query.exec();
  }
 
+
+
  QSqlQueryModel* Service:: afficher()
  {
      QSqlQueryModel* model=new QSqlQueryModel();
@@ -55,9 +60,21 @@ void Service::setclasse(int classe){this->classe=classe;}
            model->setHeaderData(0, Qt::Horizontal, QObject::tr("NUM"));
            model->setHeaderData(1, Qt::Horizontal, QObject::tr("Theme"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("classe"));
+           model->setHeaderData(3, Qt::Horizontal, QObject::tr("standby"));
 
      return model;
  }
+ bool Service::modifier(int NUM, bool rain)
+ {
+     QString NUM_string=QString::number(NUM);
+         QSqlQuery query;
+            query.prepare("update service set standby=:standby where NUM=:NUM");
+            query.bindValue(":NUM",NUM_string);
+            query.bindValue(":standby",(int)rain);
+
+    return query.exec();
+ }
+
  bool Service::modifier(int NUM,QString Theme, int classe)
  {
      QString NUM_string=QString::number(NUM);

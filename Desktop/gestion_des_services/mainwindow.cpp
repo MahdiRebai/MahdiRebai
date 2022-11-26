@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include <QIntValidator>
 #include "service.h"
+#include"arduino.h"
 #include <QDesktopServices>
 #include <QUrl>
 #include <QFileDialog>
@@ -11,6 +12,7 @@
 #include <QPieSeries>
 #include <QPieSlice>
 #include <QtCharts/QChartView>
+#include <QDebug>
 QT_CHARTS_USE_NAMESPACE
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -20,12 +22,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->le_NUM->setValidator( new QIntValidator(100, 9999999, this));
     ui->tab_service->setModel(S.afficher());
+    timerId = startTimer(5000);
 
 
 }
 
 MainWindow::~MainWindow()
 {
+    killTimer(timerId);
     delete ui;
 }
 
@@ -74,7 +78,8 @@ void MainWindow::on_pushButton_2_clicked()
     bool test;
     test=S.modifier(NUM,Theme,classe);
     if(test)
-    {ui->tab_service->setModel(S.afficher());
+    {
+        ui->tab_service->setModel(S.afficher());
         QMessageBox::information(nullptr,QObject::tr("OK"),QObject::tr("service modifié"),QMessageBox::Ok);
 
 }
@@ -235,4 +240,44 @@ void MainWindow::on_pushButton_5_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->tableView_3->setModel(S.Promotion());
+}
+
+void MainWindow::on_toolButton_clicked()
+{
+    arduino* ard = new arduino();
+    int connect = ard->connect_arduino();
+    qDebug() <<"arduino_port_connect is:"<<connect;
+    if(connect > -1)
+    {
+        if(ard->write_to_arduino("GET"))
+        {
+            Service* service = new Service();
+            bool rain = ard->read_bool_from_arduino();
+            service->modifier(8, rain);
+            ui->tab_service->setModel(S.afficher());
+            ui->label_11->setText( rain ? "Rain" : "No Rain");
+            qDebug() <<"rain is:"<<rain;
+        }
+    }
+    ard->close_arduino();
+}
+
+
+void MainWindow::timerEvent(QTimerEvent *event)
+{
+    arduino* ard = new arduino();
+    int connect = ard->connect_arduino();
+    qDebug() <<"arduino_port_connect is:"<<connect;
+    if(connect > -1)
+    {
+        if(ard->write_to_arduino("GET"))
+        {
+            Service* service = new Service();
+            bool rain = ard->read_bool_from_arduino();
+            service->modifier(8, rain);
+            ui->tab_service->setModel(S.afficher());
+            qDebug() <<"rain is:"<<rain;
+        }
+    }
+    ard->close_arduino();
 }

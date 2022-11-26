@@ -35,12 +35,16 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_toolButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QByteArray data; // variable contenant les données reçues
-
-    Arduino A; // objet temporaire
+    int timerId;
+    arduino A;
     Service S;
+    void timerEvent(QTimerEvent *event);
+
 };
 
 #endif // MAINWINDOW_H
