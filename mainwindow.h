@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 #include "evenement.h"
 #include <QMainWindow>
+#include <QtCharts>
+#include <QChartView>
+#include <QLineSeries>
+#include "penalite.h"
+#include "arduino.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +20,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-private slots:
+    QChart *chartevent ;
+    QChartView *chartViewEvents ;
+ private slots:
+    void update_label();
     void on_lineEdit_2_returnPressed();
 
     void on_pushButton_clicked();
@@ -109,8 +117,53 @@ private slots:
 
     void on_comboBox_parametre_activated(const QString &arg1);
 
+    void on_pdf_clicked();
+
+    void on_ds_clicked();
+
+    void on_lineEdit_refpen_returnPressed();
+
+    void on_pushButton_35_clicked();
+
+    void on_pushButton_34_clicked();
+
+    void on_pushButton_RE_clicked();
+
+    void on_pushButtonANN_clicked();
+
+    void on_xe_clicked();
+
+    void on_TESTTT_clicked();
+
+    void on_pd2_clicked();
+
+
+    void on_ON_clicked();
+
+    void on_OFF_clicked();
+
+    void on_plus_clicked();
+
+    void on_moins_clicked();
+
+    void on_pushan_clicked();
+
+    void on_pushcon_clicked();
+
+    void on_ARDPUSH_clicked();
+
+    void on_buttard_clicked();
+
+    void on_retourbutt_clicked();
+
+    void on_tbview_activated(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
         Evenement E;
+        penalite P ;
+        arduino A;
+        QByteArray data;
+
 };
 #endif // MAINWINDOW_H
