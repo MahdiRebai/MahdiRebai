@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tableView->setModel(cl.afficher());
-    ui->comboBox_3->setModel(cl.afficheroncombo());
+    ui->ntableView->setModel(cl.afficher());
+    ui->ncomboBox_3->setModel(cl.afficheroncombo());
     ui->cb_idclient->setModel(cl.afficheroncombo());
     ui->tableView_rdv->setModel(r.afficherrdv());
 
@@ -22,7 +22,7 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_npushButton_clicked()
 {
     int cin=ui->aj_cin->text().toInt();
     QString nom=ui->aj_nom->text();
@@ -39,8 +39,8 @@ if(test)
   {
 ui->cb_idclient->setModel(cl.afficheroncombo());
     msgBox.setText("Ajout avec succes.");
-    ui->tableView->setModel(c.afficher());
-    ui->comboBox_3->setModel(cl.afficheroncombo());
+    ui->ntableView->setModel(c.afficher());
+    ui->ncomboBox_3->setModel(cl.afficheroncombo());
   }
 else
 {
@@ -50,7 +50,7 @@ else
 }
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_npushButton_2_clicked()
 {int cin=ui->aj_cin->text().toInt();
     QString nom=ui->aj_nom->text();
     QString prenom=ui->aj_pren->text();
@@ -62,7 +62,7 @@ void MainWindow::on_pushButton_2_clicked()
           {
 ui->cb_idclient->setModel(cl.afficheroncombo());
 
- ui->tableView->setModel(cl.afficher());
+ ui->ntableView->setModel(cl.afficher());
               QMessageBox::information(nullptr,QObject::tr("OK"),
                                    QObject::tr("modification établie"),
                                    QMessageBox::Ok);}
@@ -72,18 +72,18 @@ ui->cb_idclient->setModel(cl.afficheroncombo());
                                   QMessageBox::Cancel);}
 }
 
-void MainWindow::on_comboBox_3_currentIndexChanged(int index)
+void MainWindow::on_ncomboBox_3_currentIndexChanged(int index)
 {
-     ui->comboBox_3->currentText();
+     ui->ncomboBox_3->currentText();
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_npushButton_3_clicked()
 {
-    bool test=cl.supprimer(ui->comboBox_3->currentText().toInt());
-    bool test1=r.supprimerrdv(ui->comboBox_3->currentText().toInt());
+    bool test=cl.supprimer(ui->ncomboBox_3->currentText().toInt());
+    bool test1=r.supprimerrdv(ui->ncomboBox_3->currentText().toInt());
     if(test)
-    { ui->tableView->setModel(cl.afficher());
-        ui->comboBox_3->setModel(cl.afficheroncombo());
+    { ui->ntableView->setModel(cl.afficher());
+        ui->ncomboBox_3->setModel(cl.afficheroncombo());
         ui->tableView_rdv->setModel(r.afficherrdv());
 
     ui->cb_idclient->setModel(cl.afficheroncombo());
@@ -99,15 +99,15 @@ void MainWindow::on_pushButton_3_clicked()
                                     QMessageBox::Cancel);
 }
 
-void MainWindow::on_pushButton_4_clicked()
+void MainWindow::on_npushButton_4_clicked()
 {
     QString colone=ui->colone_tri->currentText();
         QString ordre=ui->ordre_tri->currentText();
         Client c;
-        ui->tableView->setModel(c.tri(colone,ordre));
+        ui->ntableView->setModel(c.tri(colone,ordre));
 }
 
-void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+void MainWindow::on_nlineEdit_textChanged(const QString &arg1)
 {
 
 }
@@ -121,7 +121,7 @@ void MainWindow::on_lineEdit_rech_textChanged(const QString &arg1)
         query->prepare("SELECT * FROM clientt WHERE cin LIKE'"+arg1+"%'");//
 query->exec();
     model->setQuery(*query);
-ui->tableView->setModel(model);
+ui->ntableView->setModel(model);
 
 
     }
@@ -130,22 +130,22 @@ ui->tableView->setModel(model);
             query->prepare("SELECT * FROM CLIENTT WHERE NOM LIKE'"+arg1+"%'");//+tri
     query->exec();
         model->setQuery(*query);
-    ui->tableView->setModel(model);
+    ui->ntableView->setModel(model);
         }
         else{
             if(ui->comboBox_rech->currentText()=="PRENOM")
                 query->prepare("SELECT * FROM CLIENTT WHERE PRENOM LIKE'"+arg1+"%'");//+tri
         query->exec();
             model->setQuery(*query);
-        ui->tableView->setModel(model);
+        ui->ntableView->setModel(model);
             }
 
         }
 }
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_npushButton_5_clicked()
 {
- cl.excel(ui->tableView);
+ cl.excel(ui->ntableView);
 }
 
 void MainWindow::on_b_aj_rdv_clicked()
@@ -162,7 +162,7 @@ void MainWindow::on_cb_idclient_currentIndexChanged(int index)
 
 }
 
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_npushButton_6_clicked()
 {
 
         bool    test=r.modifrdv(ui->cb_idclient->currentText().toInt(),ui->dateEdit->text());
@@ -171,7 +171,7 @@ void MainWindow::on_pushButton_6_clicked()
     ui->cb_idclient->setModel(cl.afficheroncombo());
     ui->tableView_rdv->setModel(r.afficherrdv());
      ui->cb_idclient->setModel(cl.afficheroncombo());
-     ui->tableView->setModel(cl.afficher());
+     ui->ntableView->setModel(cl.afficher());
                   QMessageBox::information(nullptr,QObject::tr("OK"),
                                        QObject::tr("modification établie"),
                                        QMessageBox::Ok);}
@@ -181,8 +181,11 @@ void MainWindow::on_pushButton_6_clicked()
                                       QMessageBox::Cancel);}
 }
 
-void MainWindow::on_pushButton_7_clicked()
+void MainWindow::on_npushButton_7_clicked()
 {
     stat_client=new statclient(this);
     stat_client->show();
 }
+
+
+

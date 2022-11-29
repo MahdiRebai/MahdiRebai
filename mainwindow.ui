@@ -178,7 +178,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QTableView" name="tableView">
+     <widget class="QTableView" name="ntableView">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -188,7 +188,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="npushButton">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -201,7 +201,7 @@
        <string>ajouter</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="npushButton_2">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -214,7 +214,7 @@
        <string>modifier</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_3">
+     <widget class="QComboBox" name="ncomboBox_3">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -224,7 +224,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="npushButton_3">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -270,7 +270,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="npushButton_4">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -363,7 +363,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="npushButton_5">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -386,7 +386,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="npushButton_6">
       <property name="geometry">
        <rect>
         <x>880</x>
@@ -399,7 +399,7 @@
        <string>modifier date</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="npushButton_7">
       <property name="geometry">
        <rect>
         <x>370</x>

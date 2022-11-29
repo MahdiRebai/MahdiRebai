@@ -25,6 +25,10 @@ statclient::statclient(QWidget *parent) :
        chart->addSeries(series);
         chart->setTitle("STATS des liv");
         QChartView *chartview= new QChartView(chart);
+        chartview->chart()->setAnimationOptions(QChart::AllAnimations);
+        chartview->chart()->legend()->setAlignment(Qt::AlignRight);
+        QChart::ChartTheme theme= static_cast<QChart::ChartTheme>(QChart::ChartThemeBrownSand);
+        chartview->chart()->setTheme(theme);
          chartview->setParent(ui->horizontalFrame_2);
 }
 
