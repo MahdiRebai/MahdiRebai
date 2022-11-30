@@ -118,7 +118,7 @@ void MainWindow::on_lineEdit_rech_textChanged(const QString &arg1)
             QSqlQuery   *query= new QSqlQuery();
     if(ui->comboBox_rech->currentText()=="CIN"
             ){
-        query->prepare("SELECT * FROM clientt WHERE cin LIKE'"+arg1+"%'");//
+        query->prepare("SELECT * FROM client WHERE cin LIKE'"+arg1+"%'");//
 query->exec();
     model->setQuery(*query);
 ui->ntableView->setModel(model);
@@ -127,14 +127,14 @@ ui->ntableView->setModel(model);
     }
     else {
         if(ui->comboBox_rech->currentText()=="NOM"){
-            query->prepare("SELECT * FROM CLIENTT WHERE NOM LIKE'"+arg1+"%'");//+tri
+            query->prepare("SELECT * FROM CLIENT WHERE NOM LIKE'"+arg1+"%'");//+tri
     query->exec();
         model->setQuery(*query);
     ui->ntableView->setModel(model);
         }
         else{
             if(ui->comboBox_rech->currentText()=="PRENOM")
-                query->prepare("SELECT * FROM CLIENTT WHERE PRENOM LIKE'"+arg1+"%'");//+tri
+                query->prepare("SELECT * FROM CLIENT WHERE PRENOM LIKE'"+arg1+"%'");//+tri
         query->exec();
             model->setQuery(*query);
         ui->ntableView->setModel(model);

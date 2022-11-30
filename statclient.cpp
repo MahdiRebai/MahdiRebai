@@ -48,7 +48,7 @@ QList<qreal> statclient::stat_client()
 {
     QList<qreal> list ;
     QSqlQuery query;
-    query.prepare("select SEXE,count(SEXE) from CLIENTT group by SEXE");
+    query.prepare("select SEXE,count(SEXE) from CLIENT group by SEXE");
     query.exec();
     while(query.next())
     {list.append(query.value(1).toInt());}
@@ -59,7 +59,7 @@ QList<qreal> statclient::stat_client()
 QList<QString> statclient::stat_client_sexe()
 {QList<QString> list ;
     QSqlQuery query;
-    query.prepare("select SEXE,count(SEXE) from CLIENTT group by SEXE");
+    query.prepare("select SEXE,count(SEXE) from CLIENT group by SEXE");
     query.exec();
     while(query.next())
     {list.append(query.value(0).toString());}

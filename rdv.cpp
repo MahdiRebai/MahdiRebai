@@ -23,7 +23,7 @@ bool rdv::ajRdv()
 QSqlQueryModel* rdv::afficherrdv()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
-     model->setQuery("SELECT * FROM RDV INNER JOIN CLIENTT ON RDV.CIN=CLIENTT.CIN ");
+     model->setQuery("SELECT * FROM RDV INNER JOIN CLIENT ON RDV.CIN=CLIENT.CIN ");
      return model;
 }
 

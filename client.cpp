@@ -45,7 +45,7 @@ query.bindValue(":SEXE",sexe);
 QSqlQueryModel* Client::afficher()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
-     model->setQuery("SELECT* FROM clientt");
+     model->setQuery("SELECT* FROM client");
      return model;
 }
 
@@ -54,7 +54,7 @@ bool Client::modifier(int cin, QString nom, QString prenom, int tel, QString mai
     QSqlQuery query;
 
 
-         query.prepare("update clientt set nom=:nom, prenom=:prenom, tel=:tel ,mail=:mail ,sexe=:sexe "
+         query.prepare("update client set nom=:nom, prenom=:prenom, tel=:tel ,mail=:mail ,sexe=:sexe "
                        "where cin=:cin");
 
          query.bindValue(":nom", nom);
@@ -70,7 +70,7 @@ QSqlQueryModel * Client::afficheroncombo()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
 
-    model->setQuery("select * from clientt");
+    model->setQuery("select * from client");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
 
         return model;
@@ -80,12 +80,12 @@ QSqlQueryModel * Client::afficheroncombo()
 bool Client::supprimer(int cin)
 {
     QSqlQuery query;
-            query.prepare("select * from clientt where cin=:cin");
+            query.prepare("select * from client where cin=:cin");
             query.bindValue(":cin", cin);
             query.exec();
             if (query.next())
             {
-             query.prepare(" Delete from clientt where cin=:cin");
+             query.prepare(" Delete from client where cin=:cin");
              query.bindValue(":cin", cin);
 
                     query.exec();
@@ -98,7 +98,7 @@ bool Client::supprimer(int cin)
 QSqlQueryModel*  Client::tri(QString colone, QString ordre)
 {
 QSqlQueryModel* model=new QSqlQueryModel();
-model->setQuery("select * from clientt order by "+colone+" "+ordre+"");
+model->setQuery("select * from client order by "+colone+" "+ordre+"");
 return model;
 }
 
