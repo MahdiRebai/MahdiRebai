@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../RESSOURCES/add.png</file>
+        <file>../RESSOURCES/apps.png</file>
+        <file>../RESSOURCES/back.png</file>
+        <file>../RESSOURCES/calendar.png</file>
+        <file>../RESSOURCES/HEY.png</file>
+        <file>../RESSOURCES/HEY2.png</file>
+        <file>../RESSOURCES/home.png</file>
+        <file>../RESSOURCES/icons8-cancel-16.png</file>
+        <file>../RESSOURCES/icons8-cancel-24.png</file>
+        <file>../RESSOURCES/icons8-cancel-96.png</file>
+        <file>../RESSOURCES/LG2.png</file>
+        <file>../RESSOURCES/login.png</file>
+        <file>../RESSOURCES/paper-plane.png</file>
+        <file>../RESSOURCES/password.png</file>
+        <file>../RESSOURCES/shopping-cart.png</file>
+        <file>../RESSOURCES/signup.png</file>
+        <file>../RESSOURCES/user.png</file>
+        <file>../../Downloads/icons8-chercher-50.png</file>
+        <file>../../Pictures/home1.png</file>
+        <file>../../Downloads/hola.svg</file>
+        <file>../../Downloads/—Pngtree—black straight arrow clip art_5575752.png</file>
+        <file>../../Downloads/Capture.PNG</file>
+        <file>../../Downloads/menu.png</file>
+        <file>../../Downloads/icons8-planner-96.png</file>
+        <file>../../Downloads/pdf.png</file>
+    </qresource>
+</RCC>
