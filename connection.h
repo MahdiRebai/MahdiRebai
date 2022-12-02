@@ -3,7 +3,7 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
-//TSt
+//TStt
 
 class Connection
 {
