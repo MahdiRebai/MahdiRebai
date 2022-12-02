@@ -24,5 +24,9 @@
         <file>../../Downloads/Capture.PNG</file>
         <file>../../Downloads/menu.png</file>
         <file>../../Downloads/icons8-planner-96.png</file>
+<<<<<<< HEAD
+=======
+        <file>../../Downloads/pdf.png</file>
+>>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
     </qresource>
 </RCC>

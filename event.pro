@@ -1,6 +1,12 @@
 QT       += core gui
 QT += sql
+<<<<<<< HEAD
 
+=======
+QT += printsupport
+QT += charts
+QT += serialport
+>>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -17,6 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+<<<<<<< HEAD
     connection.cpp \
     evenement.cpp \
     main.cpp \
@@ -26,6 +33,25 @@ HEADERS += \
     connection.h \
     evenement.h \
     mainwindow.h
+=======
+    arduino.cpp \
+    connection.cpp \
+    evenement.cpp \
+    main.cpp \
+    mainwindow.cpp \
+    penalite.cpp \
+    service.cpp \
+    stats_event.cpp
+
+HEADERS += \
+    arduino.h \
+    connection.h \
+    evenement.h \
+    mainwindow.h \
+    penalite.h \
+    service.h \
+    stats_event.h
+>>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
 
 FORMS += \
     mainwindow.ui
@@ -39,4 +65,10 @@ RESOURCES += \
     RES.qrc
 
 DISTFILES += \
+<<<<<<< HEAD
     ../../Pictures/home1.png
+=======
+    ../../Downloads/pdf.png \
+    ../../Pictures/home1.png
+
+>>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15

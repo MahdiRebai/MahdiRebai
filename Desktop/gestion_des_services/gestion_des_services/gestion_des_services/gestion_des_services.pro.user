@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.11.0, 2022-12-02T18:25:41. -->
+<!-- Written by QtCreator 4.11.0, 2022-11-24T16:34:07. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{766fe362-387e-4eed-b4ef-8691133d8bc6}</value>
-=======
-<!-- Written by QtCreator 4.11.0, 2022-11-29T21:52:00. -->
-<qtcreator>
- <data>
-  <variable>EnvironmentId</variable>
-  <value type="QByteArray">{de6c0880-1270-440c-9e4c-6136867cb83a}</value>
->>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+  <value type="QByteArray">{c1435a4e-a1c6-4344-a558-4059f4c7b814}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -79,11 +71,7 @@
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Nour/Desktop/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Debug</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/hichem rebai/Documents/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Debug</value>
->>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/easytech/Desktop/build-gestion_des_services-Desktop_Qt_5_9_9_MinGW_32bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -131,11 +119,7 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Nour/Desktop/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Release</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/hichem rebai/Documents/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Release</value>
->>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/easytech/Desktop/build-gestion_des_services-Desktop_Qt_5_9_9_MinGW_32bit-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -183,11 +167,7 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Nour/Desktop/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Profile</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/hichem rebai/Documents/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Profile</value>
->>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/easytech/Desktop/build-gestion_des_services-Desktop_Qt_5_9_9_MinGW_32bit-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -307,14 +287,9 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Nour/Desktop/v4/event.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Nour/Desktop/v4/event.pro</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">event2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/hichem rebai/Documents/SmartEventPlanner/event.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/hichem rebai/Documents/SmartEventPlanner/event.pro</value>
->>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">gestion_des_services2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/easytech/Desktop/gestion_des_services/gestion_des_services/gestion_des_services.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/easytech/Desktop/gestion_des_services/gestion_des_services/gestion_des_services.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
@@ -325,11 +300,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-<<<<<<< HEAD
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/Nour/Desktop/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Debug</value>
-=======
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/hichem rebai/Documents/build-event-Desktop_Qt_5_9_9_MinGW_32bit-Debug</value>
->>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/easytech/Desktop/build-gestion_des_services-Desktop_Qt_5_9_9_MinGW_32bit-Debug</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

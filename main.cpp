@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
 #include "mainwindow.h"
 #include <QApplication>
 #include <QMessageBox>
