@@ -7,6 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <iterator>
+#include <QMessageBox>
 Evenement::Evenement()
 {
     ref="";  cin=0;  numS=0; PRIX=0;
@@ -38,7 +39,7 @@ void Evenement::set_prix(int input){
     bool Evenement::ajouter(QString date_res)
     {
         QSqlQuery query;
-        QString queryText ="INSERT INTO events (REFERENCE, cin, numS, DATE_RES,PRIX,ETAT) VALUES (:ref, :cin, :numS,TO_DATE(\'"+date_res+"\',\'DD/MM/YYYY\'),:PRIX,'1')";
+        QString queryText ="INSERT INTO events (REFERENCE, cin, numS, DATE_RES,PRIX,ETAT) VALUES (:ref, :cin, :numS ,TO_DATE(\'"+date_res+"\',\'DD/MM/YYYY\'),:PRIX,'1')";
      //  QString ref_string=QString::number(ref);
         qDebug() <<PRIX ;
             //  query.prepare("INSERT INTO events (REFERENCE, cin, numS,PRIX) VALUES (:ref, :cin, :numS, :PRIX)");
@@ -204,3 +205,51 @@ return model;
  }
 
 
+
+ QString Evenement::getname(QString input)
+ {   QString returnname="";
+     QString queryText ;
+     queryText = "select name from agents where name = \'" + input +"\'" ;
+     QSqlQuery query(queryText) ;
+     while (query.next())
+     {return (query.value(0).toString());}
+     return returnname;
+ }
+
+
+
+
+
+ QString Evenement::getpwd(QString input2)
+{QString returnpwd="";
+     QString queryText ;
+     queryText = "select pwd from agents where pwd = \'" + input2 +"\'" ;
+     QSqlQuery query(queryText) ;
+     while (query.next())
+     {return (query.value(0).toString());}
+     return returnpwd;
+
+ }
+
+ QSqlQueryModel *Evenement::show()
+ {
+     QSqlQueryModel* model=new QSqlQueryModel();
+      model->setQuery("SELECT * FROM agents");
+      return model;
+ }
+
+
+
+
+ bool Evenement::add()
+ {
+  /*
+     QSqlQuery query;
+     QString queryText ="INSERT INTO agents (name,pwd) VALUES (:NAME,:PWD)";
+             query.prepare(queryText) ;
+             query.bindValue(":NAME", NAME);
+             query.bindValue(":PWD",PWD);
+    return query.exec();*/
+
+
+ }

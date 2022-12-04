@@ -9,6 +9,7 @@ class Evenement
 public:
     Evenement();
     Evenement(QString,int,int,int);
+    Evenement(QString,QString);
     QString getRef();
     int getCin();
     int getNumS();
@@ -18,17 +19,21 @@ public:
     bool ajouter(QString date_res);
     QSqlQueryModel *afficher(QString numS,QString ordre,QString parametre);
     QSqlQueryModel *afficher_standby();
-QSqlQueryModel *afficher_simple();
-        void updating();
-     bool supprimer(QString ref);
-     bool modifier(QString ref,int cin, int numS,int PRIX);
-     void set_prix(int input);
-     void statistique(QVector<double>* ticks,QVector<QString> *labels);
-     void nb_jours();
-     int getPrix(QString ref);
-     int get_standby();
+    QSqlQueryModel *afficher_simple();
+    void updating();
+    bool supprimer(QString ref);
+    bool modifier(QString ref,int cin, int numS,int PRIX);
+    void set_prix(int input);
+    void statistique(QVector<double>* ticks,QVector<QString> *labels);
+    void nb_jours();
+    int getPrix(QString ref);
+    int get_standby();
+    QString getname(QString input);
+    QString getpwd(QString input2);
 
+    QSqlQueryModel *show();
 
+    bool add();
 
 private: QString ref;
          int cin;

@@ -3,6 +3,15 @@ QT += sql
 QT += printsupport
 QT += charts
 QT += serialport
+QT       += core gui charts
+
+
+QT       += sql core gui
+QT       += svg
+QT       += network
+QT       += serialport
+QT       += qml
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -20,23 +29,39 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     arduino.cpp \
+    avis.cpp \
+    client.cpp \
     connection.cpp \
     evenement.cpp \
     main.cpp \
     mainwindow.cpp \
+    notification.cpp \
+    paiement.cpp \
     penalite.cpp \
+    qrcode.cpp \
+    rdv.cpp \
+    service.cpp \
+    statclient.cpp \
     stats_event.cpp
 
 HEADERS += \
     arduino.h \
+    avis.h \
+    client.h \
     connection.h \
     evenement.h \
     mainwindow.h \
+    notification.h \
+    paiement.h \
     penalite.h \
+    rdv.h \
+    service.h \
+    statclient.h \
     stats_event.h
-
+    qrcode.hpp
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    statclient.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,6 +72,7 @@ RESOURCES += \
     RES.qrc
 
 DISTFILES += \
+    ../../Downloads/graphic.png \
     ../../Downloads/pdf.png \
     ../../Pictures/home1.png
 

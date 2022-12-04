@@ -3,7 +3,10 @@
 
 arduino::arduino()
 {
-
+    data = "";
+    arduino_port_name="";
+    arduino_is_available=false;
+    serial= new QSerialPort;
 }
 
 
@@ -21,6 +24,7 @@ int arduino::connect_arduino()
            if(arduino_is_available){ // configuration de la communication ( débit...)
                serial->setPortName(arduino_port_name);
                if(serial->open(QSerialPort::ReadWrite)){
+                   qDebug()<<"ARDUINO IS OPEN ";
                    serial->setBaudRate(QSerialPort::Baud9600); // débit : 9600 bits/s
                    serial->setDataBits(QSerialPort::Data8); //Longueur des données : 8 bits,
                    serial->setParity(QSerialPort::NoParity); //1 bit de parité optionnel
@@ -69,4 +73,21 @@ QSerialPort* arduino::getserial()
 QString arduino::getarduino_port_name()
 {
     return arduino_port_name ;
+}
+bool arduino::read_bool_from_arduino()
+{
+    if(serial->waitForReadyRead(3000)){
+        QByteArray var = serial->read(1);
+        return (bool)var[0];
+    }
+    qDebug() << "can't read";
+    return false;
+
+}
+
+int arduino::write2_to_arduino(const char *data)
+{
+
+        return serial->write(data);
+
 }

@@ -121,6 +121,7 @@ bool penalite::penality(QString ref/*,int ptheme*/)
       //return pen;
       QString queryText;
       //if (ptheme==0)
+
       queryText = "update events SET PENALITE=\'"+pens+"\'where reference = \'"+ref+"\'" ;
       /*else
           queryText = "update events SET PENALITE=\'"+pens+"\',etat = '0' where reference = \'"+ref+"\'" ;*/

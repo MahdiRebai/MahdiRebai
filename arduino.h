@@ -14,6 +14,10 @@ public:
     QByteArray read_from_arduino() ;
     QSerialPort* getserial() ;
     QString getarduino_port_name() ;
+    bool read_bool_from_arduino();
+    int write2_to_arduino(const char *data)
+;
+
 
 private :
     QSerialPort *serial ;
