@@ -25,8 +25,12 @@
         <file>../../Downloads/menu.png</file>
         <file>../../Downloads/icons8-planner-96.png</file>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <file>../../Downloads/pdf.png</file>
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+        <file>../../Downloads/pdf.png</file>
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
     </qresource>
 </RCC>
