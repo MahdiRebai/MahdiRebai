@@ -4,7 +4,10 @@
 #include <QIntValidator>
 #include <QMessageBox>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 #include <QSqlQuery>
 #include <QPrinter>
 #include <QPrintDialog>
@@ -27,7 +30,10 @@
 #include <QDebug>
 
 
+<<<<<<< HEAD
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,13 +41,34 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    int ret=A.connect_arduino();
+    switch(ret)
+       {case(0):qDebug()<< "arduino is available and connected to :" << A.getarduino_port_name();
+        break;
+        case(1):qDebug()<< "arduino is available but not connected to :"<< A.getarduino_port_name();
+            break;
+          case(-1):qDebug()<<"arduino is not available";
+         }
+    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
+
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
    // ui->laREF->setValidator( new QIntValidator(0, 99999, this));
     ui->leNUMS->setValidator( new QIntValidator(0, 9, this));
     ui->leCIN->setValidator( new QIntValidator(0, 999999, this));
-   ui->TabEv->setModel(E.afficher(ui->lineEdit_recherche->text(),ui->comboBox_ordre->currentText(),ui->comboBox_parametre->currentText()));
+    ui->TabEv->setModel(E.afficher(ui->lineEdit_recherche->text(),ui->comboBox_ordre->currentText(),ui->comboBox_parametre->currentText()));
+    ui->tableView_penalite->setModel(P.afficher(ui->lineEdit_refpen->text()));
+    //ui->tbview->setModel(E.afficher_standby());
     ui->tabWidget_2->tabBar()->hide();
     ui->tabWidget_6->tabBar()->hide();
+    ui->tabservice->tabBar()->hide();
+    ui->ZINA->hide();
+    ui->ZINA_2->hide();
+    ui->LEX->setReadOnly("events");
 
+<<<<<<< HEAD
 =======
     int ret=A.connect_arduino();
     switch(ret)
@@ -67,6 +94,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->ZINA_2->hide();
     ui->LEX->setReadOnly("events");
 
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
     //ui->tbview->setModel(E.afficher_simple());
 
     chartevent = new QChart();
@@ -96,7 +125,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->le_NUM->setValidator( new QIntValidator(100, 9999999, this));
     ui->tab_service->setModel(S.afficher());
     //timerId = startTimer(5000);
+<<<<<<< HEAD
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 
 
 }
@@ -108,9 +140,13 @@ MainWindow::~MainWindow()
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 void MainWindow::on_lineEdit_2_returnPressed()
 {
     ui->stackedWidget->setCurrentIndex(1);
@@ -180,11 +216,18 @@ void MainWindow::on_pushButton_24_clicked()
 {
     ui->stackedWidget_2->setCurrentIndex(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    ui->ZINA->hide();
+    ui->ZINA_2->hide();
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 }
 
+
 void MainWindow::on_pushButton_19_clicked()
-{
+{            ui->ZINA->hide();
      ui->stackedWidget_2->setCurrentIndex(1);
+<<<<<<< HEAD
 =======
     ui->ZINA->hide();
     ui->ZINA_2->hide();
@@ -196,16 +239,26 @@ void MainWindow::on_pushButton_19_clicked()
      ui->stackedWidget_2->setCurrentIndex(1);
      ui->ZINA_2->show();
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+     ui->ZINA_2->show();
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 }
 
 
 void MainWindow::on_pushButton_21_clicked()
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
+=======
+{        ui->ZINA_2->hide();
+
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
      ui->stackedWidget_2->setCurrentIndex(2);
+     ui->ZINA->show();
 }
 
 void MainWindow::on_pushButton_20_clicked()
+<<<<<<< HEAD
 {
 =======
 {        ui->ZINA_2->hide();
@@ -218,6 +271,10 @@ void MainWindow::on_pushButton_20_clicked()
 {ui->ZINA->hide();
     ui->ZINA_2->hide();
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+{ui->ZINA->hide();
+    ui->ZINA_2->hide();
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
      ui->stackedWidget_2->setCurrentIndex(3);
 }
 
@@ -225,37 +282,54 @@ void MainWindow::on_pushButton_22_clicked()
 {
      ui->stackedWidget_2->setCurrentIndex(4);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      ui->ZINA->hide();
      ui->ZINA_2->hide();
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+     ui->ZINA->hide();
+     ui->ZINA_2->hide();
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 }
 
 void MainWindow::on_pushButton_23_clicked()
 {
      ui->stackedWidget_2->setCurrentIndex(5);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      ui->ZINA->hide();
      ui->ZINA_2->hide();
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+     ui->ZINA->hide();
+     ui->ZINA_2->hide();
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 }
 
 
 void MainWindow::on_PBRECHERCHE_clicked()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     ui->tabWidget_2->setCurrentIndex(0);
 =======
     ui->tabWidget_2->setCurrentIndex(5);
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+    ui->tabWidget_2->setCurrentIndex(5);
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 }
 
 void MainWindow::on_PSSTATS_clicked()
 {
      ui->tabWidget_2->setCurrentIndex(1);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
      stats_event *stat = new stats_event ;
      QLineSeries *series = stat ->Money_Stats("12") ;
 
@@ -263,7 +337,10 @@ void MainWindow::on_PSSTATS_clicked()
     chartevent->addSeries(series);
     chartevent->setTitle("LINE CHART ONE");
 
+<<<<<<< HEAD
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 }
 
 void MainWindow::on_PBFICHIER_clicked()
@@ -280,14 +357,20 @@ void MainWindow::on_PBREPORTER_clicked()
 {
      ui->tabWidget_2->setCurrentIndex(4);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      ui->tableView_penalite->setModel(P.afficher(ui->lineEdit_refpen->text()));
 
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+     ui->tableView_penalite->setModel(P.afficher(ui->lineEdit_refpen->text()));
+
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 }
 // boutton ajouter base de données
 void MainWindow::on_PbAjouter_clicked()
 {   QString ref=ui->laREF->text();
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     int cin=ui->leCIN->text().toInt();
@@ -300,12 +383,21 @@ void MainWindow::on_PbAjouter_clicked()
     int cin=ui->leCIN->text().toInt();
 
     int numS=ui->leNUMS->text().toInt();
+=======
+    int PRIX=ui->lineEdit_price->text().toInt();
+    int cin=ui->leCIN->text().toInt();
+
+    int numS=ui->leNUMS->text().toInt();
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
      Evenement E(ref,cin,numS,PRIX);
      E.set_prix(ui->lineEdit_price->text().toInt());
      bool test=E.ajouter(ui->dateEvent->text());
      qDebug() <<test ;
 
+<<<<<<< HEAD
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
      QMessageBox msgBox;
      if(test)
      {
@@ -317,11 +409,16 @@ void MainWindow::on_PbAjouter_clicked()
  }
      else
 <<<<<<< HEAD
+<<<<<<< HEAD
       {   QMessageBox::critical(nullptr, QObject::tr("database is not open"),
 =======
       {
          QMessageBox::critical(nullptr, QObject::tr("database is not open"),
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+      {
+         QMessageBox::critical(nullptr, QObject::tr("database is not open"),
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
                      QObject::tr("ajout failed.\n"
                                  "Click Cancel to exit."), QMessageBox::Cancel);}
 
@@ -332,10 +429,14 @@ void MainWindow::on_TR_clicked()
      ui->tabWidget_2->setCurrentIndex(5);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 // bouton afficher
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+// bouton afficher
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 void MainWindow::on_pushButton_5_clicked()
 {
     ui->TabEv->setModel(E.afficher(ui->lineEdit_recherche->text(),ui->comboBox_ordre->currentText(),ui->comboBox_parametre->currentText()));
@@ -392,23 +493,32 @@ void MainWindow::on_option_clicked()
     ui->tabWidget_2->setCurrentIndex(5);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 //bouton modifier
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+//bouton modifier
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 void MainWindow::on_PBmodifierX_clicked()
 {
     QString ref=ui->LineMod->text();
     int cin=ui->LineCin->text().toInt();
     int numS=ui->LineNumS->text().toInt();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     int PRIX=ui->pxB->text().toInt();
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+    int PRIX=ui->pxB->text().toInt();
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 
     Evenement E;
     bool test;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     test=E.modifier(ref,cin,numS);
     if(test)
@@ -421,6 +531,12 @@ void MainWindow::on_PBmodifierX_clicked()
 
     {  ui->TabEv->setModel(E.afficher(ui->lineEdit_recherche->text(),ui->comboBox_ordre->currentText(),ui->comboBox_parametre->currentText()));
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+    test=E.modifier(ref,cin,numS,PRIX);
+    if(test)
+
+    {  ui->TabEv->setModel(E.afficher(ui->lineEdit_recherche->text(),ui->comboBox_ordre->currentText(),ui->comboBox_parametre->currentText()));
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                     QObject::tr("modification successful.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);}
@@ -454,20 +570,28 @@ void MainWindow::on_comboBox_parametre_currentTextChanged(const QString &arg1)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void MainWindow::on_lineEdit_recherche_textChanged(const QString &arg1)
 =======
 /*void MainWindow::on_lineEdit_recherche_textChanged(const QString &arg1)
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+/*void MainWindow::on_lineEdit_recherche_textChanged(const QString &arg1)
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 {
 //    ui->TabEv->setModel(E.afficher(ui->lineEdit_recherche->text(),ui->comboBox_ordre->currentText(),ui->comboBox_parametre->currentText()));
 
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*void MainWindow::on_tettt_clicked()
 =======
 void MainWindow::on_tettt_clicked()
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+void MainWindow::on_tettt_clicked()
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 {
     QString ref=ui->laREF->text();
 
@@ -487,7 +611,10 @@ void MainWindow::on_tettt_clicked()
 
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 
 void MainWindow::on_pdf_clicked()
 {
@@ -898,4 +1025,7 @@ void MainWindow::on_ard_clicked()
     ui->tabservice->setCurrentIndex(7);
 
 }
+<<<<<<< HEAD
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1

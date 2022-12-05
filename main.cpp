@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 #include "mainwindow.h"
 #include <QApplication>
 #include <QMessageBox>

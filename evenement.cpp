@@ -3,13 +3,23 @@
 #include<QtDebug>
 #include<QObject>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+#include <QString>
+#include<QSqlQueryModel>
+#include <iostream>
+#include <sstream>
+#include <iterator>
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 Evenement::Evenement()
 {
-    ref="";  cin=0;  numS=0;
+    ref="";  cin=0;  numS=0; PRIX=0;
+
 }
 
 
+<<<<<<< HEAD
     Evenement::Evenement(QString ref,int cin,int numS)
 { this->ref=ref;
 =======
@@ -25,6 +35,8 @@ Evenement::Evenement()
 }
 
 
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 void Evenement::set_prix(int input){
 
     PRIX=input;}
@@ -33,7 +45,10 @@ void Evenement::set_prix(int input){
     Evenement::Evenement(QString ref,int cin,int numS,int PRIX)
 {      this->ref=ref;
         this->PRIX=PRIX;
+<<<<<<< HEAD
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
         this->cin=cin;
         this->numS=numS;}
 
@@ -48,13 +63,28 @@ void Evenement::set_prix(int input){
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     bool Evenement::ajouter()
+=======
+    bool Evenement::ajouter(QString date_res)
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
     {
         QSqlQuery query;
-
+        QString queryText ="INSERT INTO events (REFERENCE, cin, numS, DATE_RES,PRIX,ETAT) VALUES (:ref, :cin, :numS ,TO_DATE(\'"+date_res+"\',\'DD/MM/YYYY\'),:PRIX,'1')";
      //  QString ref_string=QString::number(ref);
-              query.prepare("INSERT INTO events (REFERENCE, cin, numS) VALUES (:ref, :cin, :numS)");
+        qDebug() <<PRIX ;
+            //  query.prepare("INSERT INTO events (REFERENCE, cin, numS,PRIX) VALUES (:ref, :cin, :numS, :PRIX)");
+                query.prepare(queryText) ;
+                query.bindValue(":ref", ref);
+                query.bindValue(":cin", cin);
+                query.bindValue(":numS", numS);
+                query.bindValue(":PRIX", PRIX);
 
+
+
+
+
+<<<<<<< HEAD
               query.bindValue(":ref", ref);
               query.bindValue(":cin", cin);
               query.bindValue(":numS", numS);
@@ -77,6 +107,8 @@ void Evenement::set_prix(int input){
 
 
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
               return query.exec();
     }
     bool Evenement::supprimer(QString ref)
@@ -87,10 +119,14 @@ void Evenement::set_prix(int input){
     //    QString ref_string=QString::number(ref);
               query.prepare("Delete from events where (REFERENCE=:ref)");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
                 //scanf/cin
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+                //scanf/cin
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
               query.bindValue(":ref", ref);
 
               return query.exec();
@@ -98,6 +134,7 @@ void Evenement::set_prix(int input){
 
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
        QSqlQueryModel *Evenement::afficher(QString numLine,QString ordre,QString parametre)
         {
@@ -171,6 +208,73 @@ return model;
               QString queryText ;
               if (parametre == "numero de service")
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+
+    /*int Evenement::get_standby()
+    {
+        QString queryText ;
+        int i=0;
+       // queryText = "select * from service where  =1" ;
+        queryText = "select num from servcie where STANDBY =1" ;
+        //QString
+        QSqlQuery query(queryText) ;
+        while(query.next())
+        {  TabStandby->push_back( query.value(0).toInt());
+                i++;
+
+        }
+        return 0;
+    }*/
+
+   QSqlQueryModel *Evenement::afficher_standby()
+    { QString queryText ;
+
+       queryText = "select * from events where nums =1 or nums=2" ;
+
+                 QSqlQueryModel * model=new  QSqlQueryModel();
+
+
+
+                        //  QString line = QString::fromStdString(ss.str());
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("REFERENCE"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("CIN"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("NUMS"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("ETAT"));
+       // model->setHeaderData(7, Qt::Horizontal, QObject::tr("ETAT"));
+
+
+
+return model;
+
+
+    }
+
+
+
+
+  /* QSqlQueryModel *Evenement::afficher_simple()
+    {
+        QSqlQueryModel * model=new  QSqlQueryModel();
+        QString queryText ;
+        queryText="select * from events where NUMS between 1 and 5";
+        qDebug()<< queryText ;
+        model->setQuery(queryText);
+        model->setHeaderData(0, Qt::Horizontal, QObject::tr("REFERENCE"));
+        model->setHeaderData(1, Qt::Horizontal, QObject::tr("CIN"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("NUMS"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("ETAT"));
+
+
+
+    }*/
+
+
+     QSqlQueryModel *Evenement::afficher(QString numLine,QString ordre,QString parametre)
+        {
+              QSqlQueryModel * model=new  QSqlQueryModel();
+              QString queryText ;
+              if (parametre == "numero de service")
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
                    parametre = "nums" ;
 
               if (numLine == "")
@@ -179,10 +283,14 @@ return model;
                   else
                       queryText = "SELECT * FROM events ORDER BY "+ parametre +" DESC" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
                       }
 =======
                      }
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+                     }
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
               else
                  { if (ordre == "Croissant")
                                     queryText = "SELECT * FROM events WHERE numS = '"+numLine+"' ORDER BY "+ parametre +" ASC" ;
@@ -196,17 +304,33 @@ return model;
               model->setHeaderData(1, Qt::Horizontal, QObject::tr("CIN"));
               model->setHeaderData(2, Qt::Horizontal, QObject::tr("NUMS"));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+              model->setHeaderData(3, Qt::Horizontal, QObject::tr("PRIX"));
+             // model->setHeaderData(7, Qt::Horizontal, QObject::tr("ETAT"));
+
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
    return model;
         }
-  bool Evenement::modifier(QString ref,int cin, int numS)
-        {   //    QString ref_i=QString::number(ref);
+
+  //   bool Evenement::annuler_event(int NUMS)
+
+
+  bool Evenement::modifier(QString REFERENCE,int CIN, int NUMS,int PRIX)
+        {     // QString ref_i=ref;
                    QSqlQuery query;
-                   query.prepare("update events set  CIN=:cin,NUMS=:numS where REFERENCE=:ref");
-                   query.bindValue(":ref",ref);
-                   query.bindValue(":CIN",cin);
-                   query.bindValue(":numS",numS);
+                   query.prepare("UPDATE events set REFERENCE=:REFERENCE , CIN=:CIN , NUMS=:NUMS , PRIX=:PRIX where REFERENCE=:REFERENCE" );
+                   //UPDATE nom_de_table SET nom_colonne = 'nouvelle valeur’ WHERE condition
+
+                   query.bindValue(":REFERENCE",REFERENCE);
+                   query.bindValue(":CIN",CIN);
+                   query.bindValue(":NUMS",NUMS);
+                   query.bindValue(":PRIX",PRIX);
+
+
 
            return query.exec();
+<<<<<<< HEAD
         }
 
 
@@ -238,6 +362,8 @@ return model;
 
 
            return query.exec();
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
   }
   void Evenement::statistique(QVector<double>* ticks,QVector<QString> *labels)
   {
@@ -263,6 +389,9 @@ return model;
       return 0;
 
  }
+<<<<<<< HEAD
 >>>>>>> d417753b0206d5dcaf751e7329a8634bb1685c15
+=======
+>>>>>>> 0ab4f713885d0fe53e6e35a8fab2b7c8e8d296d1
 
 
